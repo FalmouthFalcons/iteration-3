@@ -1,0 +1,47 @@
+<h1>Products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>category</th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td>product.title</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% end %>
+</table>
+
+<%= link_to 'Sell a Product', new_article_path  %>
+
+
+
+
+    class CreateProducts < ActiveRecord::Migration[5.1]
+  def change
+    create_table :products do |t|
+      t.string :title
+      t.string :category
+      t.string :type
+      t.float :price
+      t.boolean :delivery
+      t.references :user, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
+
+
+
+Given a user is authenticated
+And performs a gesture on the Sell a product hyperlink
+When the product form is rendered
+Then there should be a dropdown that displays all product categories
+
+Given a user has filled out the product form, but not chosen a category
+When the user clicks on the Sell button
+Then the user should be alerted to select a product category
