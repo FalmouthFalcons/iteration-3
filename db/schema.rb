@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114165621) do
+ActiveRecord::Schema.define(version: 20171114200202) do
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "payment_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_types", force: :cascade do |t|
+    t.string "payment_type"
+    t.integer "account_number"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_types", force: :cascade do |t|
+    t.string "product_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "title"
@@ -21,6 +49,8 @@ ActiveRecord::Schema.define(version: 20171114165621) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_type_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -29,6 +59,10 @@ ActiveRecord::Schema.define(version: 20171114165621) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.integer "payment_type_id"
+    t.index ["payment_type_id"], name: "index_users_on_payment_type_id"
+    t.index ["product_id"], name: "index_users_on_product_id"
   end
 
 end

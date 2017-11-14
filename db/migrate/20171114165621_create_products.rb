@@ -2,10 +2,10 @@ class CreateProducts < ActiveRecord::Migration[5.1]
   def change
     create_table :products do |t|
       t.string :title
-      t.string :catergory
+      t.string :category
       t.string :type
-      t.integer :price
-      t.boolean :delevery
+      t.float :price
+      t.boolean :delivery
       t.references :user, foreign_key: true
 
       t.timestamps
