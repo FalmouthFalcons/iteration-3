@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # use this for windows
-gem 'bcrypt', platforms: :ruby
+gem 'bcrypt', '3.1.7'
 gem 'wdm', '>= 0.1.0'
 
 # Use Capistrano for deployment
