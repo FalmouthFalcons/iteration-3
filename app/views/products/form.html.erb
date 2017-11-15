@@ -2,33 +2,30 @@
 
   <p>
     <%= form.title %><br>
-    <%=  %>
+    <%= form.text_field :title %>
   </p>
 
   <p>
+    <%# Then there should be a dropdown that displays all product categories %>
     <%=  form.category%>
     <%=  %>
   </p>
 
   <p>
     <%= form.type %>
+    <%= form.text_field :type %>
   </p>
 
+  <p>
+    <%=  form.price %>
+    <%=  form.text_field :price %>
+  </p>
+
+  <p>
+    <%= form.submit 'Sell' %>
+  </p>
 <% end %>
 
-
-
-  class CreateProducts < ActiveRecord::Migration[5.1]
-  def change
-    create_table :products do |t|
-      t.string :title
-      t.string :category
-      t.string :type
-      t.float :price
-      t.boolean :delivery
-      t.references :user, foreign_key: true
-
-      t.timestamps
-    end
-  end
-end
+<%# Given a user has filled out the product form, but not chosen a category
+When the user clicks on the Sell button
+Then the user should be alerted to select a product category %>
