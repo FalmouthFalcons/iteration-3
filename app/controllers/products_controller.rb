@@ -1,31 +1,30 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = products.all
+    @products = Product.all
   end
 
-  def
-
+  def show
+    @product = Product.find(params[:id])
   end
 
-  def
+  def new
+    @product = Product.new
+    # binding.pry
+  end
 
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to @products
+    else
+      render 'new'
+    end
   end
 
   def alert
-    @products = Products.find(params[:id])
+    @products = Product.find(params[:id])
     @articles.alert
     redirect_to products_path
   end
 end
-
-
-
-# Given a user is authenticated
-# And performs a gesture on the Sell a product hyperlink
-# When the product form is rendered
-# Then there should be a dropdown that displays all product categories
-
-# Given a user has filled out the product form, but not chosen a category
-# When the user clicks on the Sell button
-# Then the user should be alerted to select a product category
