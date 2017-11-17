@@ -1,6 +1,6 @@
 <%# <%= link_to 'ProductToSell', new_product_url %>
 <br>
-<%# <%= link_to 'Home', welcome_index_path %>
+<%# <%= link_to 'Home', welcome_index_path %> 
 <h1>Products for Sale</h1>
 <br>
 
@@ -15,7 +15,7 @@
     <th> </th>
 
 </tr>
-<% @products.each do |product| %>
+<% @product.each do |product| %>
    <tr>
     <td><%= product.title %> </td>
     <td><%= product.category %> </td>
@@ -24,10 +24,7 @@
     <td><%= product.delivery %> </td>
     <td><%= product.city %> </td>
     <td><%= link_to 'Show', product_path(product)%> </td>
-    <td><%= link_to 'Delete', product_path(product),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+</tr>
 
 <% end %>
 </table>
