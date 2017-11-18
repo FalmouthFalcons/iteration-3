@@ -13,45 +13,60 @@
  *= require_tree .
  *= require_self
  */
- img {
+
+#home_page {
+    /* background-image: url('falconhead.jpg'); */
+    background-color: rgb(219, 190, 126);
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.product_img {
     width: 700px;
     height: auto;
     border-radius: 12px;
 }
 
- .nav_height {
-     min-height: 66px;
- }
- body {
-     margin-right: 30px;
- }
+.nav_height {
+    min-height: 66px;
+}
+
+body {
+    margin-right: 30px;
+}
+
 .move_right {
     padding-left: 32px;
 }
- 
+
 .white {
     color: white;
     display: inline;
 }
 
- h1 {
-     padding-left: 22px;
- }
- table {
-     margin-left: 32px;
- }
+h1 {
+    padding-left: 22px;
+}
 
- form {
+table {
+    margin-left: 32px;
+}
+
+form {
     margin-left: 22px;
     margin-top: 22px;
- }
+}
 
- td {
+td {
     padding: 0px 16px 0px 0px;
     text-align: left;
- }
+}
 
- th {
+th {
     padding: 0px 16px 0px 0px;
     text-align: left;
- }
+}

@@ -13,7 +13,8 @@
             <p class="move_right"><%= @product.title %> </p>
             <p class="move_right"><%= @product.category %> </p>
             <p class="move_right"><%= @product.description %> </p>
-
+            <p class="move_right"><%= @product.quantity %> </p>
+            <p class="move_right"><%= @product.sold %> </p>
     <p>
         <%= form.submit %>
     </p>
@@ -22,7 +23,7 @@
     </div>
  <%# shows image only if one exits %>
  <% if @product.product_image.present? %>
-    <div class="col-9"><%= image_tag @product.product_image %> 
+    <div class="col-9 product_img"><%= image_tag @product.product_image %> 
  <% end %>
 
    

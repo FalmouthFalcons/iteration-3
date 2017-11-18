@@ -1,7 +1,8 @@
 <%# <%= link_to 'ProductToSell', new_product_url %>
 <br>
 <%# <%= link_to 'Home', welcome_index_path %>
-<h1>Products for Sale</h1>
+<h1>My Products</h1>
+<p>All your product listings:</p> 
 <br>
 
 <table>
@@ -11,9 +12,10 @@
     <th>Price </th>
     <th>Type </th>
     <th>Delivery </th>
-    <th>City </th>
-    <th> </th>
+    <th>Quantity Sold</th>
+    <th>Quantity Remaining</th>
 
+    <th> </th>
 </tr>
 <% @product.each do |product| %>
    <tr>
@@ -22,12 +24,16 @@
     <td><%= product.price %> </td>
     <td><%= product.type %> </td>
     <td><%= product.delivery %> </td>
-    <td><%= product.city %> </td>
     <td><%= product.active %> </td>
+    <td><%= product.quantity %> </td>
+    <td><%= product.sold %> </td>
+
     <td><%= link_to 'Show', product_path(product)%> </td>
-    <td><%= link_to 'Destroy', product,
+<button type="button" class="btn btn-outline-primary">Product Detail</button>
+<button type="button" class="btn btn-outline-primary">Delete</button>
+    <td><%= link_to 'Remove Listing', product,
             method: :delete,
-            data: { confirm: 'Are you sure?' } %></td>
+            data: { confirm: 'This product and its information will be saved in this menu, just no longer available for sale. You can re-post whenever you like. Are you sure you would like to proceed?' } %></td>
     </tr>
 
 <% end %>
