@@ -4,7 +4,7 @@
 <h1>My Products</h1>
 <p>All your product listings:</p> 
 <br>
-
+<%= link_to 'Back', url_for(:back) %>
 <table>
 <tr>
     <th>Title </th>
@@ -17,6 +17,7 @@
 
     <th> </th>
 </tr>
+<%# loop for each product on index page  %>
 <% @product.each do |product| %>
    <tr>
     <td><%= product.title %> </td>

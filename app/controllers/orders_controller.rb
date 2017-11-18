@@ -36,8 +36,8 @@ class OrdersController < ApplicationController
 
         @user = User.find(session[:user_id]) 
         puts @user
-
-        @order_product = OrderProduct.where(order_id: params[:id])
+        #added order of shopping cart so that last item added is at top
+        @order_product = OrderProduct.where(order_id: params[:id]).order('id DESC')
         
         @final = []
 

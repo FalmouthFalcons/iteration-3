@@ -1,41 +1,44 @@
+
 <h1>Shopping Cart</h1>
+<%= link_to 'Back', url_for(:back) %>
+
 <br>
 
-<table>
-<tr>
-    <th>Title </th>
-    <th>Category </th>
-    <th>Price </th>
-    <th>Type </th>
-    <th>Delivery </th>
-    <th>City </th>
-    <th>Image </th> 
+<table class="order_rows">
+<tr class="order_rows tr_header">
+    <th class="order_rows">Title </th>
+    <th class="order_rows">Category </th>
+    <th class="order_rows">Delivery </th>
+    <th class="order_rows">City </th>
+    <th class="order_rows">type </th>
+    <th class="order_rows">price </th>
+    <th class="move_right">Image </th> 
  
 </tr>
  <%total = 0%>
 <% @final.each do |product| %>
 
-<div class="row">
-  <div class="col-3">
+
+  
    <tr>
-        <td><%= product.title %> </td>  
-        <td><%= product.delivery %> </td>
-        <td><%= product.price %> </td>  
-        <td><%= product.city %> </td> 
-        <td><%= product.type %> </td> 
-        <td><%= product.delivery %> </td> 
+        <td class="order_rows"><%= product.title %> </td>  
+        <td class="order_rows"><%= product.category %> </td>
+        <td class="order_rows"><%= product.delivery %> </td>  
+        <td class="order_rows"><%= product.city %> </td> 
+        <td class="order_rows"><%= product.type %> </td> 
+        <td class="order_rows"><%= product.price %> </td> 
   <td>   <% if product.product_image.present? %>
-    <div class="col-9"><%= image_tag product.product_image %> 
-
+            <%= image_tag product.product_image , :class => "order_image " %> 
+        <% else %>
+            <%= image_tag('boat.jpg', :class => "order_image")%>
+        <% end %> </td>
 <% total += product.price %>
-    <% end %> </td>
-
 <% end %>
-<%=total%>
-   </tr>
-     
- </div>
 
+   </tr>
+   
+     
+<h5 class="move_right"> Total Price: <%=total.round(2)%></h5><br>
    
     
 

@@ -1,8 +1,8 @@
 <br>
-<%= link_to 'back', products_path, :class => "move_right" %>
+<%= link_to 'Back', url_for(:back) %>
 <br>
 
-<h3>Add To Cart</h3>
+<h3 class="move_right">Add To Cart</h3>
 
 <%= form_with model: @order, :url => add_to_cart_path, local: true do |form| %>
 
@@ -24,6 +24,10 @@
  <%# shows image only if one exits %>
  <% if @product.product_image.present? %>
     <div class="col-9 product_img"><%= image_tag @product.product_image %> 
+    <div class="col-9"><%= image_tag @product.product_image %> 
+<% elsif %>
+    <div class="col-9"><%= image_tag('boat.jpeg')%>
+
  <% end %>
 
    

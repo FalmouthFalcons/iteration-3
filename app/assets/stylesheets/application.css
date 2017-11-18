@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 #home_page {
     /* background-image: url('falconhead.jpg'); */
     background-color: rgb(219, 190, 126);
@@ -26,6 +27,27 @@ img {
 }
 
 .product_img {
+
+.tr_header {
+    background-color: lightskyblue;
+}
+
+  .order_rows{
+     padding: 6px;
+     border: 1px solid lightgray;
+     padding-right: 42px;
+     
+ }
+ 
+ .order_image {
+    width: 155px;
+    height: 155px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+ img {
+
     width: 700px;
     height: auto;
     border-radius: 12px;
