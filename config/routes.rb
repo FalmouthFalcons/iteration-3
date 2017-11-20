@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :orders
-  resources :users, :controller => 'users_controller'
+  # resources :users, :controller => 'users_controller'
+  resources :users
   resources :sessions
   resources :payment_types
   resources :product_types
