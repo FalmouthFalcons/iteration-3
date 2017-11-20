@@ -46,9 +46,12 @@
   </p>
 
   <p>
-    <%= form.label :delivery %><br>
-    make this a boolean!!!
-    <%= form.text_field :delivery %>
+
+    <%= form.label :delivery, "Local delivery" %><br>
+    <%= form.label :delivery, "Yes", :value => "true" %>
+    <%= form.radio_button :delivery, true %>
+    <%= form.label :delivery, "No", :value => "false" %>
+
   </p>
 
   <p>
