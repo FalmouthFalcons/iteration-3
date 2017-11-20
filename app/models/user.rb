@@ -6,4 +6,6 @@ class User < ApplicationRecord
   # A Customer can have many payment types.
   has_many :payment_types
   has_many :orders
+
+  validates_presence_of :city
 end

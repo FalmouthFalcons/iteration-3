@@ -1,12 +1,13 @@
 <br>
 <h1>Falmouth Falcons Buy and Sell Store</h1>
 
+<body id="home_page">
+
 <div id="user_header" class="move_right">
   <% if logged_in? %>
     <%= link_to 'Buy Products', products_path %>
     </br>
     <%= link_to 'Submit Product to Sell', new_product_url%>
-
     <br>
     <%= link_to 'Add Payment Type', new_payment_type_path %>
     <br>
@@ -16,6 +17,8 @@
     <br>
     <%= link_to "Log In", login_path %>
      <br>
-    <%= link_to 'View Products', products_path %>
+    <%= link_to 'View Products', products_path %> 
   <% end %>
 </div>
+
+</body>
