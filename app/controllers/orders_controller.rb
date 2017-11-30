@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
         @order = Order.new
     end
     
-
+# "find_or_create_by" method could replace this:
     def add_to_cart
 # if no pmt type entered, order is known as incomplete
         @user = User.find(session[:user_id])
@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
            new_order_product.save
            redirect_to action: "index"
         end
-  
+
         # takes user to the view of Shopping Cart
     end
 
@@ -38,20 +38,6 @@ class OrdersController < ApplicationController
         puts @user
         #added order of shopping cart so that last item added is at top
         @order = Order.find_by(:customer_id => @user.id, :payment_type_id => nil)
-        @order_product = OrderProduct.where(order_id: @order.id).order('id DESC')
-        
-        @final = []
-
-        @order_product.each do |op|
-            puts Product.find(op.product_id)
-        
-   
-
-        @product = Product.find(op.product_id)
-          
-        @final.push(@product)
-
-        end
 
     end
 
