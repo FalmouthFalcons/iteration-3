@@ -15,8 +15,8 @@
       <tr>
       <td><%= category.category %></td>
       <td><%= category.products.count %></td>
-      <%@category_products = category.products.limit(3) %>
-      <%@category_products.each do |titles| %>
+      <% @category_products = category.products.limit(3) %>
+      <% @category_products.each do |titles| %>
         <td><%= link_to titles[:title], product_path(titles) %></td>
         <td>Remaining Inventory: <%= titles[:quantity] %> | Price: <%= number_to_currency(titles[:price]) %></td>
       </tr>
@@ -24,6 +24,3 @@
   <% end %>
   </table>
 </div>
-
-
-
