@@ -16,11 +16,10 @@
     <th class="order_rows">Category </th>
 
     <th class="order_rows">Local Delivery? </th>
-    <%# <th class="order_rows">City </th> %>
     <th class="order_rows">Type </th>
     <th class="order_rows">Quantity </th>
     <th class="order_rows">Price </th>
-    <th class="order_rows">Pic </th>
+    <th class="order_rows">Image </th>
 
 </tr>
 
@@ -28,14 +27,13 @@
 
 <br><br>
 
-<% @final.each do |product| %>
+<% @order.products.each do |product| %>
 
 
    <tr>
         <td class="order_rows"><%= product.title %> </td>  
         <td class="order_rows"><%= product.product_type_id %> </td>
         <td class="order_rows"><%= product.delivery %> </td>  
-        <%# <td class="order_rows"><%= product.city %> </td>  
         <td class="order_rows"><%= product.type %> </td> 
         <td class="order_rows"><%= product.quantity %> </td> 
         <td class="order_rows"><%= product.price %> </td> 
