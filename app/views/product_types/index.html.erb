@@ -1,21 +1,26 @@
-
-<h1>Product Categories</h1>
-<br>
-<%= link_to 'Back', url_for(:back) %>
-<br>
-<br>
-<table>
-<tr>
-    <th>Category</th>
-    <th>Total Products</th>
-</tr>
-<% @product_types.each do |p|%>
-    <tr>
-    <td><%= p.category %></td>
-    <td><%= @products_count[p.id] %>
-
-    <td><%= @first_three[1..2]  %>
-
-    </tr>
-<% end %>
-</table>
+<div class="container">
+  <h1>Product Categories</h1>
+  <br>
+  <%= link_to 'Back', url_for(:back) %>
+  <br>
+  <br>
+  <table>
+  <tr>
+      <th>Category</th>
+      <th>Total Products</th>
+      <th>Product Titles</th>
+      <th>Inventory</th>>
+  </tr>
+  <% @product_types.each do |category|%>
+      <tr>
+      <td><%= category.category %></td>
+      <td><%= category.products.count %></td>
+      <% @category_products = category.products.limit(3) %>
+      <% @category_products.each do |titles| %>
+        <td><%= link_to titles[:title], product_path(titles) %></td>
+        <td>Remaining Inventory: <%= titles[:quantity] %> | Price: <%= number_to_currency(titles[:price]) %></td>
+      </tr>
+      <% end %>
+  <% end %>
+  </table>
+</div>
