@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
         # gets last submission at top
         @product = Product.all.order("created_at DESC" )
         end 
+        ####### use ActiveRecord decending order method instead of sql.  
+        # ###### re-factor this code and that in the product.rb
     end
 
 
@@ -59,12 +61,6 @@ class ProductsController < ApplicationController
                 @product.save
             end
         redirect_to products_path
-    end
-    
-    # method for category listings
-    def categoryshow
-        @products = Products.all
-        @categories = @products.product_type_id
     end
 
     # makes sure the product_params are not accesable to user.

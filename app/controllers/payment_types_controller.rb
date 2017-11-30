@@ -15,7 +15,7 @@ class PaymentTypesController < ApplicationController
     def index
         @get_all = PaymentType.where(customer_id: session[:user_id] )
     end
-
+# name the @get_all variable more specifically, like @get_all_payment
     def show
         @payment_type =PaymentType.find(params[:id])
     end
