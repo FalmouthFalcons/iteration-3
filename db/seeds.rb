@@ -22,7 +22,7 @@ Product.destroy_all
 # creates a user so that new users will not get error
 
 User.create!([{
-    email: "test3@testers.com",
+    email: "test9@testers.com",
     password_digest: "$2a$10$ulnrKuQosY8upITqdSOIj.S7uL5q8JAmaP/9yy3R4IvbyrhSt427a",
     city: "Nashville"
 }])
@@ -31,7 +31,7 @@ User.create!([{
 #creates new records for products table
 Product.create!([{
     title: "Bicycle",
-    product_type_id: "",
+    product_type_id: "5",
     type: "",
     price: 122.66,
     delivery: "true",
@@ -50,7 +50,7 @@ Product.create!([{
 },
 {
     title: "Sofa",
-    product_type_id: "",
+    product_type_id: "2",
     type: "" ,
     price: 324.66,
     delivery: "true",
@@ -61,7 +61,7 @@ Product.create!([{
 },
 {
     title: "Lawnmower",
-    product_type_id: "",
+    product_type_id: "3",
     type: "" ,
     price: 99.00,
     delivery: "true",
@@ -72,7 +72,7 @@ Product.create!([{
 },
 {
     title: "Oil Filter",
-    product_type_id: "",
+    product_type_id: "1",
     type: "" ,
     price: 24.66,
     delivery: "true",
@@ -82,7 +82,7 @@ Product.create!([{
 },
 {
     title: "Boat",
-    product_type_id: "",
+    product_type_id: "5",
     type: "" ,
     price: 1324.66,
     delivery: "true",
@@ -93,7 +93,7 @@ Product.create!([{
 },
 {
     title: "Computer",
-    product_type_id: "",
+    product_type_id: "6",
     type: "" ,
     price: 1224.66,
     delivery: "true",
@@ -103,8 +103,18 @@ Product.create!([{
     quantity: 12
 },
 {
+    title: "Dryer",
+    product_type_id: "3",
+    type: "" ,
+    price: 349.66,
+    delivery: "true",
+    user_id: 9,
+    description: "Samsung’s activewash™ Top Dryer with 5.2 cu. ft. capacity allows for large loads so you can spend less time doing laundry. With 5 drying cycles and wrinkle prevention, you can dry clothes with ease.",
+    quantity: 11
+},
+{
     title: "Washer",
-    product_type_id: "",
+    product_type_id: "3",
     type: "" ,
     price: 177.66,
     delivery: "true",
@@ -118,24 +128,31 @@ Product.create!([{
 
 # creates new records for product_types
 ProductType.create!([{
+    id: "1",
     category: "Sporting Goods",
 },
 {
+    id: "2",
     category: "Furniture",
 },
 {
+    id: "3",
     category: "Hardware",
 },
 {
+    id: "4",
     category: "Automotive",
 },
 {
+    id: "5",
     category: "Outdoor Rec",
 },
 {
+    id: "6",
     category: "Electronics",
 },
 {
+    id: "7",
     category: "Appliances",
 }])
 
